@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Carioca Craft - Servidor Minecraft Bedrock</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    body {
+      min-height: 100vh;
+      background:
+        radial-gradient(circle at top, rgba(85, 255, 85, 0.22), transparent 35%),
+        linear-gradient(135deg, #08140c, #102516, #1d3b24);
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 950px;
+      background: rgba(5, 15, 8, 0.82);
+      border: 2px solid rgba(85, 255, 85, 0.28);
+      border-radius: 28px;
+      padding: 42px 26px;
+      text-align: center;
+      box-shadow: 0 25px 70px rgba(0, 0, 0, 0.55);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .container::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(255,255,255,0.035) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.035) 1px, transparent 1px);
+      background-size: 32px 32px;
+      pointer-events: none;
+    }
+
+    .content {
+      position: relative;
+      z-index: 1;
+    }
+
+    .server-icon {
+      width: 150px;
+      height: 150px;
+      border-radius: 34px;
+      object-fit: cover;
+      border: 4px solid #55ff55;
+      box-shadow: 0 0 35px rgba(85, 255, 85, 0.45);
+      margin-bottom: 20px;
+    }
+
+    h1 {
+      font-size: 46px;
+      margin-bottom: 8px;
+      color: #55ff55;
+      text-shadow: 0 0 18px rgba(85, 255, 85, 0.6);
+      letter-spacing: 1px;
+    }
+
+    .subtitle {
+      font-size: 18px;
+      color: #d7ffd7;
+      margin-bottom: 32px;
+    }
+
+    .tag {
+      display: inline-block;
+      background: rgba(85, 255, 85, 0.12);
+      border: 1px solid rgba(85, 255, 85, 0.35);
+      color: #adffad;
+      padding: 9px 16px;
+      border-radius: 999px;
+      margin-bottom: 28px;
+      font-weight: bold;
+    }
+
+    .info-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+      gap: 18px;
+      margin-bottom: 35px;
+    }
+
+    .card {
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0.09), rgba(255, 255, 255, 0.035));
+      border-radius: 20px;
+      padding: 22px;
+      border: 1px solid rgba(85, 255, 85, 0.22);
+      transition: 0.25s;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      border-color: rgba(85, 255, 85, 0.55);
+      box-shadow: 0 12px 28px rgba(0, 0, 0, 0.35);
+    }
+
+    .card h2 {
+      font-size: 17px;
+      color: #55ff55;
+      margin-bottom: 10px;
+    }
+
+    .card p {
+      font-size: 20px;
+      font-weight: bold;
+      word-break: break-word;
+    }
+
+    .buttons {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 15px;
+      margin-bottom: 30px;
+    }
+
+    .btn {
+      text-decoration: none;
+      color: white;
+      padding: 15px 25px;
+      border-radius: 14px;
+      font-weight: bold;
+      transition: 0.3s;
+      display: inline-block;
+      border: 1px solid rgba(255,255,255,0.15);
+    }
+
+    .btn:hover {
+      transform: translateY(-4px) scale(1.03);
+      box-shadow: 0 12px 24px rgba(0, 0, 0, 0.4);
+    }
+
+    .discord {
+      background: #5865F2;
+    }
+
+    .tiktok {
+      background: #101010;
+      border-color: #ff0050;
+    }
+
+    .youtube {
+      background: #ff0000;
+    }
+
+    .copy-box {
+      background: rgba(0, 0, 0, 0.35);
+      border: 1px dashed rgba(85, 255, 85, 0.45);
+      border-radius: 18px;
+      padding: 18px;
+      margin-bottom: 28px;
+    }
+
+    .copy-box span {
+      color: #55ff55;
+      font-weight: bold;
+    }
+
+    .description {
+      color: #e9ffe9;
+      line-height: 1.7;
+      font-size: 17px;
+      margin-top: 10px;
+    }
+
+    footer {
+      margin-top: 30px;
+      color: #9fbb9f;
+      font-size: 14px;
+    }
+
+    @media (max-width: 600px) {
+      h1 {
+        font-size: 34px;
+      }
+
+      .server-icon {
+        width: 125px;
+        height: 125px;
+      }
+
+      .container {
+        padding: 30px 18px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="container">
+    <div class="content">
+      <img
+        class="server-icon"
+        src="https://cdn.discordapp.com/icons/1500573098657714347/0a8acbeb7ed9e2ac0dadc3f8df629ed9.png?size=2048"
+        alt="Ícone do servidor Carioca Craft"
+      />
+
+      <h1>Carioca Craft</h1>
+      <p class="subtitle">Servidor Minecraft Bedrock</p>
+      <div class="tag">🌎 Sobrevivência • Comunidade • Diversão</div>
+
+      <section class="info-grid">
+        <div class="card">
+          <h2>Nome do Servidor</h2>
+          <p>Carioca Craft</p>
+        </div>
+
+        <div class="card">
+          <h2>Versão</h2>
+          <p>Bedrock</p>
+        </div>
+
+        <div class="card">
+          <h2>IP</h2>
+          <p>Mp.mundi.bed.net.br</p>
+        </div>
+
+        <div class="card">
+          <h2>Porta</h2>
+          <p>25515</p>
+        </div>
+      </section>
+
+      <div class="copy-box">
+        Para entrar no servidor, use o IP <span>Mp.mundi.bed.net.br</span> e a porta <span>25515</span> no Minecraft Bedrock.
+      </div>
+
+      <div class="buttons">
+        <a class="btn discord" href="https://discord.gg/W4BqU3hdG2" target="_blank">💬 Entrar no Discord</a>
+        <a class="btn tiktok" href="https://www.tiktok.com/@carioca.survival?_r=1&_t=ZS-96RoeuCUaqS" target="_blank">🎵 Ver TikTok</a>
+        <a class="btn youtube" href="https://www.youtube.com/@cariocasurvival" target="_blank">▶️ Canal no YouTube</a>
+      </div>
+
+      <p class="description">
+        Junte-se ao Carioca Craft, um servidor de Minecraft Bedrock feito para quem gosta de explorar,
+        construir, sobreviver e jogar com amigos. Entre na comunidade e acompanhe as novidades pelas redes sociais.
+      </p>
+
+      <footer>
+        © 2026 Carioca Craft - Todos os direitos reservados
+      </footer>
+    </div>
+  </main>
+</body>
+</html>
