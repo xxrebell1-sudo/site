@@ -201,6 +201,10 @@
     }
 
     .btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
       text-decoration: none;
       color: white;
       padding: 15px 25px;
@@ -229,9 +233,11 @@
       background: #ff0000;
     }
 
-    .copy-btn {
-      background: linear-gradient(90deg, #b30000, #ff1b1b);
-      cursor: pointer;
+    .social-icon {
+      width: 26px;
+      height: 26px;
+      object-fit: contain;
+      border-radius: 6px;
     }
 
     .description {
@@ -324,10 +330,17 @@
       </div>
 
       <div class="buttons">
-        <button class="btn copy-btn" onclick="copiarIP()">📋 Copiar IP e Porta</button>
-        <a class="btn discord" href="https://discord.gg/W4BqU3hdG2" target="_blank">💬 Discord</a>
-        <a class="btn tiktok" href="https://www.tiktok.com/@carioca.survival?_r=1&_t=ZS-96RoeuCUaqS" target="_blank">🎵 TikTok</a>
-        <a class="btn youtube" href="https://www.youtube.com/@cariocasurvival" target="_blank">▶️ YouTube</a>
+        <a class="btn discord" href="https://discord.gg/W4BqU3hdG2" target="_blank">
+          <img class="social-icon" src="https://images-eds-ssl.xboxlive.com/image?url=4rt9.lXDC4H_93laV1_eHM0OYfiFeMI2p9MWie0CvL99U4GA1gf6_kayTt_kBblFwHwo8BW8JXlqfnYxKPmmBevsdZpJiIhrXJKvOSYipsYbqdUBBn6r6Hb.keWYwuyu5QJ84NCtr5ij3JMrlPglnBeeDch3kJBTCQneZnfl9dA-&format=source" alt="Discord"> Discord
+        </a>
+
+        <a class="btn tiktok" href="https://www.tiktok.com/@carioca.survival?_r=1&_t=ZS-96RoeuCUaqS" target="_blank">
+          <img class="social-icon" src="https://images.icon-icons.com/3041/PNG/512/tiktok_logo_icon_189233.png" alt="TikTok"> TikTok
+        </a>
+
+        <a class="btn youtube" href="https://www.youtube.com/@cariocasurvival" target="_blank">
+          <img class="social-icon" src="https://upload.wikimedia.org/wikipedia/commons/e/ef/Youtube_logo.png" alt="YouTube"> YouTube
+        </a>
       </div>
 
       <p class="description">
@@ -341,13 +354,6 @@
     </div>
   </main>
 
-  <script>
-    function copiarIP() {
-      const texto = "Mp.mundi.bed.net.br:25515";
-      navigator.clipboard.writeText(texto).then(() => {
-        alert("IP e porta copiados: " + texto);
-      });
-    }
-  </script>
+  
 </body>
 </html>
